@@ -56,12 +56,20 @@ btnHold.addEventListener('click', function () {
   // 1. Add current score to active player's score
   scores[activePlayer] += currentScore;
   // scores[1] = scores[1] + currentScore
-  document.getElementById(`current--${activePlayer}`).textContent =
+  document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
 
   // 2. Check if player's score is >- 100
-  // Finish the game
-
-  // Switch to the next player
-  switchPlayer();
+  if (scores[activePlayer] >= 20) {
+    // Finish the game
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.add('player--winner');
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove('player--active');
+  } else {
+    // Switch to the next player
+    switchPlayer();
+  }
 });
