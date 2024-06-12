@@ -7,36 +7,50 @@
     <title>Pig Game - Landing Page</title>
     <link rel="icon" type="image/x-icon" href="img/pig.png" />
     <style>
+      @font-face {
+        font-family: academy;
+        src: url(font/Academy\ Engraved\ LET\ Fonts.ttf);
+      }
       body {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-        background-color: #f7f7f7;
         margin: 0;
+        background-image: url('img/landing.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        font-family: academy;
+      }
+      h1 {
+        text-transform: uppercase;
+        font-weight: normal;
+        font-size: 150px;
       }
       .container {
         text-align: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
       }
-      .btn {
-        font-size: 24px;
-        padding: 10px 20px;
+      .img {
+        width: 700px;
+        margin-bottom: 100px;
         cursor: pointer;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        margin-top: 20px;
+        transition: 0.5s ease-in-out;
       }
-      .btn:hover {
-        background-color: #0056b3;
+      .img:hover {
+        transform: scale(1.1);
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <h1>Welcome to Pig Game</h1>
-      <button class="btn" onclick="startGame()">Start Game</button>
+      <h1 class="title">The Pig Game</h1>
+      <img src="img/startButton.png" onclick="startGame()" class="img" />
     </div>
 
     <script>
